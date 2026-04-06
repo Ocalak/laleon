@@ -1,11 +1,12 @@
 import CircularGallery from './CircularGallery';
 
 const items = [
-  { image: '/images/fk3.png', text: 'Döner Gerichte' },
-  { image: '/images/fk4.png', text: 'Frisch zubereitet' },
-  { image: '/images/salat.png', text: 'Frischer Salat' },
-  { image: '/images/fk1.png', text: 'First Kebap' },
-  { image: '/images/fk2.png', text: 'Unsere Küche' },
+  { image: '/images/unnamed-2.jpg', text: 'Döner Gerichte' },
+  { image: '/images/unnamed-3.jpg', text: 'Frisch zubereitet' },
+  { image: '/images/unnamed-4.jpg', text: 'Spezialitäten' },
+  { image: '/images/unnamed-5.jpg', text: 'Unsere Küche' },
+  { image: '/images/unnamed-6.jpg', text: 'First Kebap' },
+  { image: '/images/salat.png',     text: 'Frischer Salat' },
 ];
 
 export default function Gallery() {
