@@ -7,9 +7,9 @@ import cors from 'cors';
 const app = express();
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
-app.use(cors({
-  origin: process.env.CLIENT_URL,
-}));
+const corsOptions = { origin: process.env.CLIENT_URL };
+app.use(cors(corsOptions));
+app.options('*', cors(corsOptions));
 
 // Nodemailer transporter (Gmail)
 const transporter = nodemailer.createTransport({
