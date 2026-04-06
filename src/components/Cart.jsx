@@ -11,7 +11,8 @@ export default function Cart() {
     setLoading(true);
     setError(null);
     try {
-      const res = await fetch('/api/create-checkout-session', {
+      const base = import.meta.env.VITE_API_URL || '';
+      const res = await fetch(`${base}/api/create-checkout-session`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
