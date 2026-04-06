@@ -1,9 +1,15 @@
 import { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const VIDEOS = [
+  { src: '/images/dks1.mp4', label: 'Video 1' },
+  { src: '/images/hero.mp4', label: 'Video 2' },
+];
 
 export default function Hero() {
   const videoRef = useRef(null);
   const [muted, setMuted] = useState(true);
+  const [activeVideo, setActiveVideo] = useState(0);
 
   function toggleSound() {
     const v = videoRef.current;
@@ -12,26 +18,68 @@ export default function Hero() {
     setMuted(v.muted);
   }
 
+  function switchVideo(index) {
+    if (index === activeVideo) return;
+    setActiveVideo(index);
+    setMuted(true);
+  }
+
   return (
     <section id="home" style={{ position: 'relative', width: '100%', marginTop: 80, overflow: 'hidden' }}>
 
       {/* Full-width video background */}
       <div className="hero-video-wrap" style={{ position: 'relative', aspectRatio: '16/7', minHeight: 420 }}>
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block', position: 'absolute', inset: 0 }}
-        >
-          <source src="/images/dks1.mp4" type="video/mp4" />
-        </video>
+        <AnimatePresence mode="wait">
+          <motion.video
+            key={VIDEOS[activeVideo].src}
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+            style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block', position: 'absolute', inset: 0 }}
+          >
+            <source src={VIDEOS[activeVideo].src} type="video/mp4" />
+          </motion.video>
+        </AnimatePresence>
         {/* Dark gradient overlay */}
         <div style={{
           position: 'absolute', inset: 0,
           background: 'linear-gradient(to right, rgba(26,10,6,0.82) 0%, rgba(26,10,6,0.55) 50%, rgba(26,10,6,0.2) 100%)',
         }} />
+
+        {/* Video switcher */}
+        <motion.div
+          initial={{ opacity: 0, y: 6 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            position: 'absolute', bottom: '1.2rem', left: '50%', transform: 'translateX(-50%)',
+            display: 'flex', gap: '0.5rem', zIndex: 10,
+          }}
+        >
+          {VIDEOS.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => switchVideo(i)}
+              title={`${VIDEOS[i].label} anzeigen`}
+              style={{
+                width: activeVideo === i ? 28 : 10,
+                height: 10,
+                borderRadius: 5,
+                border: 'none',
+                background: activeVideo === i ? '#C8960A' : 'rgba(255,255,255,0.45)',
+                cursor: 'pointer',
+                padding: 0,
+                transition: 'width 0.3s ease, background 0.3s ease',
+              }}
+            />
+          ))}
+        </motion.div>
 
         {/* Sound toggle button */}
         <motion.button
