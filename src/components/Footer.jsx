@@ -12,7 +12,7 @@ export default function Footer() {
         <div style={{ display:'flex', alignItems:'center', gap:'1rem' }}>
           <Logo variant="nav" />
           <div>
-            <div style={{ fontFamily:"'Playfair Display SC',Georgia,serif", fontSize:'1.1rem', fontWeight:700, color:'#F5EDD8' }}>First Kebap</div>
+            <div style={{ fontFamily:"system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif", fontSize:'1.1rem', fontWeight:700, color:'#F5EDD8' }}>First Kebap</div>
             <div style={{ fontSize:'0.78rem', color:'#C8960A', letterSpacing:'0.1em', textTransform:'uppercase', fontWeight:600, marginTop:2 }}>Duisburg</div>
           </div>
         </div>

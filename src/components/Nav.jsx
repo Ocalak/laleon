@@ -44,7 +44,7 @@ export default function Nav() {
         >
           <Logo variant="nav" />
           <div>
-            <div style={{ fontFamily:"'Playfair Display SC',Georgia,serif", fontSize: '1.05rem', fontWeight: 700, color: '#1A0A06', lineHeight: 1.1 }}>First Kebap</div>
+            <div style={{ fontFamily:"system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif", fontSize: '1.05rem', fontWeight: 700, color: '#1A0A06', lineHeight: 1.1 }}>First Kebap</div>
             <div style={{ fontSize: '0.68rem', color: '#C8960A', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600 }}>Duisburg</div>
           </div>
         </motion.a>

@@ -13,9 +13,10 @@ export default function Gallery() {
   return (
     <section id="galerie" style={{ padding: '80px 0 0', background: '#F5EDD8' }}>
       <div style={{ padding: '0 5% 2.5rem' }}>
-        <SectionLabel>Galerie</SectionLabel>
-        <SectionTitle>Frisch aus unserer Küche</SectionTitle>
-        <Divider />
+        <h2 style={{ fontSize: 'clamp(1.8rem, 3.5vw, 2.6rem)', fontWeight: 700, color: '#1A0A06', marginBottom: '0.5rem' }}>
+          Eure Fotos bei uns
+        </h2>
+        <div style={{ width: 40, height: 3, background: '#C0322A', borderRadius: 2, margin: '0.8rem 0 0' }} />
       </div>
       <div style={{ width: '100%', height: '600px' }}>
         <CircularGallery
@@ -35,7 +36,7 @@ export function SectionLabel({ children }) {
 }
 
 export function SectionTitle({ children }) {
-  return <h2 style={{ fontFamily:"'Playfair Display SC','Playfair Display',Georgia,serif", fontSize:'clamp(1.8rem,3.5vw,2.6rem)', fontWeight:700, color:'#1A0A06', marginBottom:'0.8rem' }}>{children}</h2>;
+  return <h2 style={{ fontFamily:"system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif", fontSize:'clamp(1.8rem,3.5vw,2.6rem)', fontWeight:700, color:'#1A0A06', marginBottom:'0.8rem' }}>{children}</h2>;
 }
 
 export function Divider() {

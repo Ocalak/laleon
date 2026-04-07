@@ -71,7 +71,7 @@ export default function Contact() {
 }
 
 function CardTitle({ children }) {
-  return <h3 style={{ fontFamily:"'Playfair Display SC','Playfair Display',Georgia,serif", fontSize:'1.05rem', fontWeight:700, color:'#C8960A', marginBottom:'1.3rem' }}>{children}</h3>;
+  return <h3 style={{ fontFamily:"system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif", fontSize:'1.05rem', fontWeight:700, color:'#C8960A', marginBottom:'1.3rem' }}>{children}</h3>;
 }
 
 function Row({ Icon, label, children }) {

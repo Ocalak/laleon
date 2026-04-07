@@ -132,7 +132,7 @@ export default function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45, duration: 0.7, ease: [0.16,1,0.3,1] }}
               style={{
-                fontFamily: "'Playfair Display SC','Playfair Display',Georgia,serif",
+                fontFamily: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
                 fontSize: 'clamp(2rem, 5vw, 3.8rem)', fontWeight: 700,
                 color: '#FDFAF5', lineHeight: 1.12, marginBottom: '1.2rem',
               }}
