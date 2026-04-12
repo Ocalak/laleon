@@ -234,7 +234,7 @@ export default function Gallery() {
           textTransform: 'uppercase',
           marginBottom: '0.6rem',
         }}>
-          unsere gäste
+          
         </p>
         <h2 style={{
           fontFamily: 'system-ui, sans-serif',
@@ -244,8 +244,8 @@ export default function Gallery() {
           lineHeight: 0.95,
           letterSpacing: '-1px',
         }}>
-          Eure Fotos<br />
-          <span style={{ color: '#C8960A' }}>bei uns</span>
+          Unsere Highlights<br />
+          <span style={{ color: '#C8960A' }}></span>
         </h2>
         <div style={{ width: 40, height: 3, background: '#C0322A', borderRadius: 2, margin: '1rem auto 0' }} />
       </div>
