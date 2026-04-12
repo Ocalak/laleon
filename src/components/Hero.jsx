@@ -122,7 +122,8 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6, ease: [0.16,1,0.3,1] }}
-              style={{ fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#C8960A', marginBottom: '0.8rem' }}
+              className="planetono-kicker"
+              style={{ marginBottom: '0.8rem' }}
             >
               Duisburg · Atroper Str. 16
             </motion.p>
@@ -131,14 +132,15 @@ export default function Hero() {
               initial={{ opacity: 0, y: 28 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.45, duration: 0.7, ease: [0.16,1,0.3,1] }}
+              className="planetono-headline"
               style={{
-                fontFamily: "system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif",
-                fontSize: 'clamp(2rem, 5vw, 3.8rem)', fontWeight: 700,
-                color: '#FDFAF5', lineHeight: 1.12, marginBottom: '1.2rem',
+                fontSize: 'clamp(3.5rem, 10vw, 7rem)',
+                marginBottom: '1.2rem',
+                textShadow: '3px 3px 0 var(--secondary)'
               }}
             >
-              Echt. Frisch.<br />
-              <span style={{ color: '#C8960A' }}>Unvergesslich.</span>
+              ECHT. FRISCH.<br />
+              <span style={{ color: 'var(--primary)', textShadow: '3px 3px 0 var(--black)' }}>UNVERGESSLICH.</span>
             </motion.h1>
 
             <motion.p
@@ -154,20 +156,19 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.75, duration: 0.55, ease: [0.16,1,0.3,1] }}
-              style={{ display: 'flex', gap: '0.8rem', flexWrap: 'wrap' }}
+              style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}
             >
               <motion.a href="#speisekarte"
-                whileHover={{ scale: 1.04, background: '#9A2420' }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ duration: 0.18 }}
-                style={{ background: '#C0322A', color: '#fff', textDecoration: 'none', padding: '0.85rem 2rem', borderRadius: 4, fontWeight: 700, fontSize: '0.88rem', letterSpacing: '0.08em', textTransform: 'uppercase', cursor: 'pointer' }}
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.98 }}
+                className="brutal-btn"
               >Online bestellen</motion.a>
               <motion.a href="#kontakt"
-                whileHover={{ scale: 1.04, background: 'rgba(253,250,245,0.12)' }}
-                whileTap={{ scale: 0.97 }}
-                transition={{ duration: 0.18 }}
-                style={{ background: 'transparent', border: '1.5px solid rgba(253,250,245,0.6)', color: '#FDFAF5', textDecoration: 'none', padding: '0.85rem 2rem', borderRadius: 4, fontWeight: 600, fontSize: '0.88rem', letterSpacing: '0.08em', textTransform: 'uppercase', cursor: 'pointer' }}
-              >Speisekarte</motion.a>
+                whileHover={{ scale: 1.04 }}
+                whileTap={{ scale: 0.98 }}
+                className="brutal-btn secondary"
+                style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', borderColor: 'rgba(255,255,255,0.4)' }}
+              >Kontakt</motion.a>
             </motion.div>
           </div>
         </div>
@@ -190,19 +191,19 @@ function InfoBar() {
     <motion.div
       initial="hidden" whileInView="show" viewport={{ once: true }}
       variants={{ hidden:{}, show:{ transition:{ staggerChildren:0.08 } } }}
-      style={{ background: '#C0322A', display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 0 }}
+      style={{ background: 'var(--primary)', display: 'flex', justifyContent: 'center', flexWrap: 'wrap', gap: 0, borderBottom: 'var(--border)' }}
     >
       {items.map(({ label, value }, i) => (
         <motion.div key={label}
           className="infobar-item"
           variants={{ hidden:{ opacity:0, y:10 }, show:{ opacity:1, y:0, transition:{ duration:0.45, ease:[0.16,1,0.3,1] } } }}
           style={{
-            padding: '1.2rem 2.5rem', textAlign: 'center',
+            padding: '1.5rem 3rem', textAlign: 'center',
             borderRight: i < items.length-1 ? '1px solid rgba(255,255,255,0.2)' : 'none',
           }}
         >
-          <div style={{ fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.65)', marginBottom: '0.2rem' }}>{label}</div>
-          <div style={{ fontSize: '0.9rem', fontWeight: 600, color: '#fff' }}>{value}</div>
+          <div style={{ fontFamily: 'var(--head)', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '3px', textTransform: 'uppercase', color: 'rgba(255,255,255,0.65)', marginBottom: '0.4rem' }}>{label}</div>
+          <div style={{ fontSize: '1rem', fontWeight: 700, color: '#fff' }}>{value}</div>
         </motion.div>
       ))}
     </motion.div>

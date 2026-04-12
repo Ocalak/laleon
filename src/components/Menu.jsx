@@ -10,10 +10,12 @@ export default function Menu() {
   const { addItem } = useCart();
 
   return (
-    <section id="speisekarte" style={{ padding: '80px 5%', background: '#FDFAF5' }}>
-      <SectionLabel>Speisekarte</SectionLabel>
-      <SectionTitle>Was wir anbieten</SectionTitle>
-      <Divider />
+    <section id="speisekarte" style={{ padding: '80px 5%', background: 'var(--bg)' }}>
+      <span className="planetono-kicker" style={{ textAlign: 'center' }}>Speisekarte</span>
+      <h2 className="planetono-headline" style={{ fontSize: 'clamp(3rem, 7vw, 5rem)', textAlign: 'center', marginBottom: '1.5rem', textShadow: '3px 3px 0 var(--secondary)' }}>
+        WAS WIR <span style={{ color: 'var(--primary)' }}>ANBIETEN</span>
+      </h2>
+      <div style={{ width: 60, height: 4, background: 'var(--primary)', borderRadius: 2, margin: '0 auto 3rem' }} />
 
       {/* Category tabs — GDK style pill tabs */}
       <motion.div
@@ -36,7 +38,7 @@ export default function Menu() {
           <motion.div
             variants={{ hidden:{}, show:{ transition:{ staggerChildren:0.04 } } }}
             initial="hidden" animate="show"
-            style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(280px, 1fr))', gap:'1px', background:'#E8D9C0', border:'1px solid #E8D9C0', borderRadius:8, overflow:'hidden', boxShadow:'0 2px 16px rgba(26,10,6,0.06)' }}
+            style={{ display:'grid', gridTemplateColumns:'repeat(auto-fill, minmax(300px, 1fr))', gap:'1.5rem' }}
           >
             {category.items.map(item => (
               <MenuItem
@@ -55,15 +57,26 @@ export default function Menu() {
 function Tab({ children, active, onClick }) {
   return (
     <motion.button onClick={onClick}
-      whileHover={{ scale: 1.03 }} whileTap={{ scale: 0.97 }}
+      whileHover={{ scale: 1.05, transform: 'translate(-2px, -2px)', boxShadow: '4px 4px 0 var(--black)' }}
+      whileTap={{ scale: 0.95 }}
       animate={{
-        background: active ? '#C0322A' : '#fff',
-        color: active ? '#fff' : '#2E1409',
-        borderColor: active ? '#C0322A' : '#E8D9C0',
-        boxShadow: active ? '0 2px 8px rgba(192,50,42,0.3)' : '0 1px 4px rgba(26,10,6,0.06)',
+        background: active ? 'var(--primary)' : 'var(--white)',
+        color: active ? 'var(--white)' : 'var(--black)',
+        borderColor: active ? 'var(--black)' : 'var(--black)',
+        boxShadow: active ? '4px 4px 0 var(--black)' : '2px 2px 0 var(--black)',
       }}
-      transition={{ duration:0.18 }}
-      style={{ border:'1px solid', padding:'0.5rem 1.1rem', borderRadius:999, fontSize:'0.82rem', fontWeight:600, cursor:'pointer', fontFamily:'inherit', letterSpacing:'0.02em' }}
+      transition={{ duration:0.15 }}
+      style={{
+        border:'2px solid var(--black)',
+        padding:'0.6rem 1.4rem',
+        borderRadius:8,
+        fontSize:'0.85rem',
+        fontWeight:700,
+        cursor:'pointer',
+        fontFamily:'var(--head)',
+        letterSpacing:'2px',
+        textTransform: 'uppercase'
+      }}
     >{children}</motion.button>
   );
 }
@@ -80,25 +93,48 @@ function MenuItem({ item, onAdd }) {
   return (
     <motion.div
       variants={{ hidden:{ opacity:0, y:8 }, show:{ opacity:1, y:0, transition:{ duration:0.3, ease:[0.16,1,0.3,1] } } }}
-      whileHover={{ background:'#FDF7EE' }}
-      style={{ background:'#fff', padding:'1.15rem 1.5rem', display:'flex', justifyContent:'space-between', alignItems:'flex-start', gap:'1rem', transition:'background 0.15s' }}
+      whileHover={{ transform: 'translate(-3px, -3px)', boxShadow: '6px 6px 0 var(--black)' }}
+      style={{
+        background:'var(--white)',
+        padding:'1.25rem 1.5rem',
+        display:'flex',
+        justifyContent:'space-between',
+        alignItems:'center',
+        gap:'1rem',
+        border: 'var(--border)',
+        boxShadow: 'var(--shadow)',
+        borderRadius: 12,
+        transition: 'all 0.15s'
+      }}
     >
       <div style={{ flex:1 }}>
-        <div style={{ fontWeight:600, color:'#1A0A06', fontSize:'0.92rem', marginBottom:'0.2rem' }}>{item.name}</div>
-        {item.desc && <div style={{ fontSize:'0.76rem', color:'#B8997A', lineHeight:1.45 }}>{item.desc}</div>}
+        <div style={{ fontFamily: 'var(--head)', fontWeight:700, color:'var(--black)', fontSize:'1.2rem', marginBottom:'0.2rem', letterSpacing: '0.5px' }}>{item.name}</div>
+        {item.desc && <div style={{ fontSize:'0.85rem', color:'var(--muted)', lineHeight:1.45 }}>{item.desc}</div>}
       </div>
-      <div style={{ display:'flex', alignItems:'center', gap:'0.75rem', flexShrink:0 }}>
-        <div style={{ fontWeight:700, color:'#C8960A', fontSize:'0.95rem', whiteSpace:'nowrap' }}>{item.price}</div>
+      <div style={{ display:'flex', alignItems:'center', gap:'1rem', flexShrink:0 }}>
+        <div style={{ fontFamily: 'var(--head)', fontWeight:700, color:'var(--primary)', fontSize:'1.3rem', textShadow: '1px 1px 0 var(--black)' }}>{item.price}</div>
         <motion.button
           onClick={handleAdd}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          animate={{ background: added ? '#2E7D32' : '#C0322A' }}
+          whileHover={{ scale: 1.15 }}
+          whileTap={{ scale: 0.85 }}
+          animate={{
+            background: added ? '#2E7D32' : 'var(--primary)',
+            boxShadow: added ? '0 0 0 transparent' : '2px 2px 0 var(--black)'
+          }}
           transition={{ duration: 0.2 }}
           style={{
-            border:'none', borderRadius:6, width:28, height:28, cursor:'pointer',
-            color:'#fff', fontWeight:800, fontSize:'1rem', display:'flex',
-            alignItems:'center', justifyContent:'center', fontFamily:'inherit',
+            border:'1.5px solid var(--black)',
+            borderRadius:8,
+            width:32,
+            height:32,
+            cursor:'pointer',
+            color:'#fff',
+            fontWeight:900,
+            fontSize:'1.2rem',
+            display:'flex',
+            alignItems:'center',
+            justifyContent:'center',
+            fontFamily:'inherit',
             flexShrink:0,
           }}
         >

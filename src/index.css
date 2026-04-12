@@ -1,29 +1,30 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg:      #FDFAF5;
-  --bg2:     #F5EDD8;
-  --bg3:     #EDE0C4;
-  --card:    #FFFFFF;
-  --border:  #E8D9C0;
-  --red:     #C0322A;
-  --red-dk:  #9A2420;
-  --red-dim: rgba(192,50,42,0.08);
-  --dark:    #1A0A06;
-  --dark2:   #2E1409;
-  --muted:   #8A6A52;
-  --muted2:  #B8997A;
-  --text:    #1A0A06;
+  /* Colors from Planetono Design System */
+  --primary:   #D42027; /* Red */
+  --secondary: #EFCA52; /* Yellow */
+  --bg:        #F4F1DE; /* Cream */
+  --bg2:       #E8E4DF; /* Muted Cream */
+  --black:     #0A0A0A;
+  --white:     #FFFFFF;
+  --muted:     #555555;
+  --border:    2.5px solid #0A0A0A;
+  --shadow:    3px 3px 0 #0A0A0A;
+  
+  /* Typography */
+  --head:      'Bebas Neue', sans-serif;
+  --font:      'Outfit', sans-serif;
 }
 
 html { scroll-behavior: smooth; }
 
 body {
   background: var(--bg);
-  color: var(--text);
-  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--black);
+  font-family: var(--font);
   font-size: 16px;
-  line-height: 1.65;
+  line-height: 1.6;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
@@ -132,4 +133,55 @@ body {
 
   /* InfoBar: hide separator lines when items wrap */
   .infobar-item { border-right: none !important; }
+}
+
+/* ─── Neo-Brutalist Utilities ─── */
+.brutal-btn {
+  display: inline-block;
+  font-family: var(--head);
+  font-size: 1rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: var(--primary);
+  color: var(--white);
+  padding: 0.8rem 2rem;
+  border: var(--border);
+  box-shadow: var(--shadow);
+  border-radius: 6px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.brutal-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--black);
+}
+
+.brutal-btn.secondary {
+  background: transparent;
+  color: var(--black);
+}
+
+.brutal-card {
+  background: var(--white);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  border-radius: 12px;
+  padding: 1.5rem;
+}
+
+.planetono-headline {
+  font-family: var(--head);
+  line-height: 0.85;
+  color: var(--black);
+}
+
+.planetono-kicker {
+  font-family: var(--head);
+  font-size: 0.85rem;
+  letter-spacing: 4px;
+  color: var(--primary);
+  text-transform: uppercase;
+  display: block;
 }

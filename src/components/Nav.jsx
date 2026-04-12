@@ -30,10 +30,11 @@ export default function Nav() {
           position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
           height: 80, display: 'flex', alignItems: 'center',
           justifyContent: 'space-between', padding: '0 5%',
-          background: '#fff',
-          borderBottom: '1px solid #E8D9C0',
-          boxShadow: scrolled ? '0 2px 20px rgba(26,10,6,0.08)' : 'none',
-          transition: 'box-shadow 0.3s ease',
+          background: 'rgba(244,241,222,0.85)',
+          backdropFilter: 'blur(12px)',
+          borderBottom: 'var(--border)',
+          boxShadow: scrolled ? '0 4px 20px rgba(10,10,10,0.1)' : 'none',
+          transition: 'all 0.3s ease',
         }}
       >
         {/* Logo + name */}
@@ -44,8 +45,8 @@ export default function Nav() {
         >
           <Logo variant="nav" />
           <div>
-            <div style={{ fontFamily:"system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif", fontSize: '1.05rem', fontWeight: 700, color: '#1A0A06', lineHeight: 1.1 }}>First Kebap</div>
-            <div style={{ fontSize: '0.68rem', color: '#C8960A', letterSpacing: '0.12em', textTransform: 'uppercase', fontWeight: 600 }}>Duisburg</div>
+            <div style={{ fontFamily:"var(--head)", fontSize: '1.4rem', fontWeight: 700, color: 'var(--black)', lineHeight: 0.9, letterSpacing: '1px' }}>FIRST KEBAP</div>
+            <div style={{ fontSize: '0.68rem', color: 'var(--primary)', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 800 }}>DUISBURG</div>
           </div>
         </motion.a>
 
@@ -58,28 +59,28 @@ export default function Nav() {
               transition={{ delay: 0.15 + i * 0.07, duration: 0.45, ease: [0.16,1,0.3,1] }}
             >
               <motion.a href={link.href}
-                whileHover={{ color: '#C8960A' }}
+                whileHover={{ color: 'var(--primary)' }}
                 transition={{ duration: 0.15 }}
-                style={{ color: '#2E1409', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 500, letterSpacing: '0.06em', textTransform: 'uppercase', cursor: 'pointer' }}
+                style={{ color: 'var(--black)', textDecoration: 'none', fontSize: '0.85rem', fontWeight: 600, letterSpacing: '2px', textTransform: 'uppercase', cursor: 'pointer' }}
               >{link.label}</motion.a>
             </motion.li>
           ))}
         </ul>
 
         {/* CTAs — desktop only */}
-        <div className="nav-ctas-desktop" style={{ gap: '0.6rem', alignItems: 'center' }}>
+        <div className="nav-ctas-desktop" style={{ gap: '0.8rem', alignItems: 'center' }}>
           <motion.a href="tel:01632364246"
-            whileHover={{ scale: 1.04 }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ duration: 0.18 }}
-            style={{ border: '1.5px solid #C0322A', color: '#C0322A', textDecoration: 'none', padding: '0.55rem 1.2rem', borderRadius: 4, fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', cursor: 'pointer' }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="brutal-btn secondary"
+            style={{ padding: '0.45rem 1.2rem', fontSize: '0.75rem' }}
           >Anrufen</motion.a>
           <motion.a href="#speisekarte"
-            whileHover={{ scale: 1.04, background: '#9A2420' }}
-            whileTap={{ scale: 0.97 }}
-            transition={{ duration: 0.18 }}
-            style={{ background: '#C0322A', color: '#fff', textDecoration: 'none', padding: '0.6rem 1.4rem', borderRadius: 4, fontSize: '0.82rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', cursor: 'pointer' }}
-          >Online bestellen</motion.a>
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="brutal-btn"
+            style={{ padding: '0.45rem 1.4rem', fontSize: '0.75rem' }}
+          >Bestellen</motion.a>
         </div>
 
         {/* Hamburger — mobile only */}
@@ -96,18 +97,13 @@ export default function Nav() {
       </motion.nav>
 
       {/* Mobile dropdown menu */}
-      <div className={`mobile-menu${menuOpen ? ' open' : ''}`}>
+      <div className={`mobile-menu${menuOpen ? ' open' : ''}`} style={{ background: 'var(--bg)', borderBottom: 'var(--border)' }}>
         {links.map(link => (
-          <a key={link.href} href={link.href} onClick={close}>{link.label}</a>
+          <a key={link.href} href={link.href} onClick={close} style={{ fontFamily: 'var(--head)', letterSpacing: '2px' }}>{link.label}</a>
         ))}
-        <div className="mobile-ctas">
-          <a href="tel:01632364246"
-            style={{ border: '1.5px solid #C0322A', color: '#C0322A' }}
-          >Anrufen</a>
-          <a href="#speisekarte"
-            onClick={close}
-            style={{ background: '#C0322A', color: '#fff' }}
-          >Online bestellen</a>
+        <div className="mobile-ctas" style={{ padding: '1.5rem', gap: '1rem' }}>
+          <a href="tel:01632364246" className="brutal-btn secondary" style={{ flex: 1, textAlign: 'center' }}>Anrufen</a>
+          <a href="#speisekarte" onClick={close} className="brutal-btn" style={{ flex: 1, textAlign: 'center' }}>Bestellen</a>
         </div>
       </div>
     </>
