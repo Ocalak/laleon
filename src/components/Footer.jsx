@@ -37,6 +37,9 @@ export default function Footer() {
       <p style={{ marginTop:'2rem', textAlign:'center', color:'rgba(255,255,255,0.2)', fontSize:'0.75rem', letterSpacing: '1px', textTransform: 'uppercase' }}>
         © 2026 Pizzeria Da Leone · Alle Rechte vorbehalten
       </p>
+      <p style={{ marginTop:'0.5rem', textAlign:'center', color:'rgba(255,255,255,0.3)', fontSize:'0.7rem', letterSpacing: '1px', textTransform: 'uppercase' }}>
+        Designed by <a href="mailto:email@ocalkaptan.de" style={{ color: 'var(--secondary)', textDecoration: 'none', fontWeight: 600 }}>Ocal Kaptan</a>
+      </p>
     </motion.footer>
   );
 }
