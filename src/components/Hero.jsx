@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 
-const HERO_IMAGE = '/src/assets/hero.png';
+const HERO_IMAGE = '/images/hero.png';
 
 export default function Hero() {
   return (

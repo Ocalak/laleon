@@ -9,7 +9,7 @@ export default function Logo({ variant = 'nav', style = {} }) {
       background: '#fff',
       ...style,
     }}>
-      <img src="/src/assets/logo.png" alt="Pizzeria Da Leone"
+      <img src="/images/logo.png" alt="Pizzeria Da Leone"
         style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block' }} />
     </div>
   );
