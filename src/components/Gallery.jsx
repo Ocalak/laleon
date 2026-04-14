@@ -3,22 +3,22 @@ import { useState, useEffect, useRef } from 'react';
 /* ─── Plate data ─────────────────────────────────────────────── */
 const PLATES = [
   {
-    name: 'FRISCHER SALAT',
-    sub: 'Täglich frisch',
-    img: '/images/salat.png',
-    tags: ['Gesund', 'Knackig', 'Leicht'],
+    name: 'PIZZA TRADIZIONALE',
+    sub: 'Authentisch & Frisch',
+    img: '/images/1.png',
+    tags: ['Napoletana', 'Frisch', 'Leicht'],
   },
   {
-    name: 'DREHSPIESS',
-    sub: 'Echt vom Grill',
-    img: '/images/unnamed-3.jpg',
-    tags: ['Knusprig', 'Saftig', 'Hausgemacht'],
+    name: 'PIZZA SPECIALE',
+    sub: 'Hausgemachte Spezialität',
+    img: '/images/2.png',
+    tags: ['Knusprig', 'Herzhaft', 'Goldgelb'],
   },
   {
-    name: 'DÜRÜM ROLLE',
-    sub: 'Perfekt für Unterwegs',
-    img: '/images/unnamed-6.jpg',
-    tags: ['Handlich', 'Frisch', 'Satt'],
+    name: 'PIZZA DA LEONE',
+    sub: 'Unser Signature Gericht',
+    img: '/images/3.png',
+    tags: ['Premium', 'Exklusiv', 'Genuss'],
   },
 ];
 

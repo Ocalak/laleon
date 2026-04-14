@@ -30,7 +30,7 @@ export default function Nav() {
           position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100,
           height: 80, display: 'flex', alignItems: 'center',
           justifyContent: 'space-between', padding: '0 5%',
-          background: 'rgba(244,241,222,0.85)',
+          background: 'rgba(253,252,240,0.85)',
           backdropFilter: 'blur(12px)',
           borderBottom: 'var(--border)',
           boxShadow: scrolled ? '0 4px 20px rgba(10,10,10,0.1)' : 'none',
@@ -45,7 +45,7 @@ export default function Nav() {
         >
           <Logo variant="nav" />
           <div>
-            <div style={{ fontFamily:"var(--head)", fontSize: '1.4rem', fontWeight: 700, color: 'var(--black)', lineHeight: 0.9, letterSpacing: '1px' }}>FIRST KEBAP</div>
+            <div style={{ fontFamily:"var(--head)", fontSize: '1.4rem', fontWeight: 700, color: 'var(--black)', lineHeight: 0.9, letterSpacing: '1px' }}>PIZZERIA DA LEONE</div>
             <div style={{ fontSize: '0.68rem', color: 'var(--primary)', letterSpacing: '0.2em', textTransform: 'uppercase', fontWeight: 800 }}>DUISBURG</div>
           </div>
         </motion.a>
@@ -69,7 +69,7 @@ export default function Nav() {
 
         {/* CTAs — desktop only */}
         <div className="nav-ctas-desktop" style={{ gap: '0.8rem', alignItems: 'center' }}>
-          <motion.a href="tel:01632364246"
+          <motion.a href="tel:020657927735"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="brutal-btn secondary"
@@ -102,7 +102,7 @@ export default function Nav() {
           <a key={link.href} href={link.href} onClick={close} style={{ fontFamily: 'var(--head)', letterSpacing: '2px' }}>{link.label}</a>
         ))}
         <div className="mobile-ctas" style={{ padding: '1.5rem', gap: '1rem' }}>
-          <a href="tel:01632364246" className="brutal-btn secondary" style={{ flex: 1, textAlign: 'center' }}>Anrufen</a>
+          <a href="tel:020657927735" className="brutal-btn secondary" style={{ flex: 1, textAlign: 'center' }}>Anrufen</a>
           <a href="#speisekarte" onClick={close} className="brutal-btn" style={{ flex: 1, textAlign: 'center' }}>Bestellen</a>
         </div>
       </div>

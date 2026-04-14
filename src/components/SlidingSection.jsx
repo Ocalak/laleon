@@ -1,20 +1,17 @@
 import CircularGallery from './CircularGallery';
 
 const slidingItems = [
-  { image: '/images/unnamed-2.jpg', text: 'Döner Kebab' },
-  { image: '/images/unnamed-3.jpg', text: 'Heiß & Lecker' },
-  { image: '/images/unnamed-4.jpg', text: 'Spezialität' },
-  { image: '/images/unnamed-5.jpg', text: 'Duisburg' },
-  { image: '/images/unnamed-6.jpg', text: 'Hausgemacht' },
-  { image: '/images/salat.png',     text: 'Frischer Salat' },
-  { image: '/images/fk1.png',       text: 'Unser Menü' },
-  { image: '/images/fk2.png',       text: 'Qualität' },
-  { image: '/images/fk3.png',       text: 'First Kebap' },
-  { image: '/images/fk4.png',       text: 'Genuss pur' },
+  { image: '/images/Screenshot 2026-04-14 at 10.21.08 PM.png', text: 'Authentisch' },
+  { image: '/images/Screenshot 2026-04-14 at 10.21.13 PM.png', text: 'Frisch gebacken' },
+  { image: '/images/Screenshot 2026-04-14 at 10.21.28 PM.png', text: 'Pizza Napoletana' },
+  { image: '/images/Screenshot 2026-04-14 at 10.21.35 PM.png', text: 'Handgemacht' },
+  { image: '/images/Screenshot 2026-04-14 at 10.21.42 PM.png', text: 'Gourmet' },
+  { image: '/images/Screenshot 2026-04-14 at 10.21.47 PM.png', text: 'Da Leone' },
+  { image: '/images/Screenshot 2026-04-14 at 10.21.54 PM.png', text: 'Genuss pur' },
   // Duplicate for density
-  { image: '/images/unnamed-2.jpg', text: 'Classic' },
-  { image: '/images/unnamed-3.jpg', text: 'Fresh' },
-  { image: '/images/unnamed-4.jpg', text: 'Legendary' },
+  { image: '/images/Screenshot 2026-04-14 at 10.21.08 PM.png', text: 'Classic' },
+  { image: '/images/Screenshot 2026-04-14 at 10.21.13 PM.png', text: 'Fresco' },
+  { image: '/images/Screenshot 2026-04-14 at 10.21.28 PM.png', text: 'Qualitá' },
 ];
 
 export default function SlidingSection() {
@@ -42,7 +39,7 @@ export default function SlidingSection() {
           textColor="var(--secondary)"
           borderRadius={0.15}
           scrollSpeed={2.5}
-          font="bold 24px 'Bebas Neue', sans-serif"
+          font="bold 24px 'Playfair Display SC', serif"
         />
       </div>
       
@@ -63,7 +60,7 @@ export default function SlidingSection() {
           fontSize: '1.2rem',
           opacity: 0.8
         }}>
-          FIRST KEBAP • FIRST KEBAP • FIRST KEBAP
+          PIZZERIA DA LEONE • PIZZERIA DA LEONE • PIZZERIA DA LEONE
         </div>
       </div>
     </section>

@@ -1,19 +1,19 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  /* Colors from Planetono Design System */
-  --primary:   #D42027; /* Red */
-  --secondary: #EFCA52; /* Yellow */
-  --bg:        #F4F1DE; /* Cream */
-  --bg2:       #E8E4DF; /* Muted Cream */
-  --black:     #0A0A0A;
+  /* Colors for Pizzeria Da Leone */
+  --primary:   #C8102E; /* Deep Red */
+  --secondary: #D4AF37; /* Gold */
+  --bg:        #FDFCF0; /* Italian Cream */
+  --bg2:       #F5F1E5; /* Paper/Stone */
+  --black:     #1A1A1A;
   --white:     #FFFFFF;
-  --muted:     #555555;
-  --border:    2.5px solid #0A0A0A;
-  --shadow:    3px 3px 0 #0A0A0A;
+  --muted:     #666666;
+  --border:    2.5px solid #1A1A1A;
+  --shadow:    4px 4px 0 #1A1A1A;
   
   /* Typography */
-  --head:      'Bebas Neue', sans-serif;
+  --head:      'Playfair Display SC', serif;
   --font:      'Outfit', sans-serif;
 }
 

@@ -1,86 +1,36 @@
-import { useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 
-const HERO_VIDEO = '/images/hero.mp4';
+const HERO_IMAGE = '/src/assets/hero.png';
 
 export default function Hero() {
-  const videoRef = useRef(null);
-  const [muted, setMuted] = useState(true);
-
-  function toggleSound() {
-    const v = videoRef.current;
-    if (!v) return;
-    v.muted = !v.muted;
-    setMuted(v.muted);
-  }
-
   return (
     <section id="home" style={{ position: 'relative', width: '100%', marginTop: 80, overflow: 'hidden' }}>
 
-      {/* Full-width video background */}
+      {/* Hero background image */}
       <div className="hero-video-wrap" style={{ position: 'relative', aspectRatio: '16/7', minHeight: 420 }}>
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
+        <img
+          src={HERO_IMAGE}
+          alt="Premium Pizza Hero"
           style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center', display: 'block', position: 'absolute', inset: 0 }}
-        >
-          <source src={HERO_VIDEO} type="video/mp4" />
-        </video>
+        />
         
         {/* Dark gradient overlay */}
         <div style={{
           position: 'absolute', inset: 0,
-          background: 'linear-gradient(to right, rgba(26,10,6,0.82) 0%, rgba(26,10,6,0.55) 50%, rgba(26,10,6,0.2) 100%)',
+          background: 'linear-gradient(to right, rgba(26,10,6,0.85) 0%, rgba(26,10,6,0.6) 50%, rgba(26,10,6,0.2) 100%)',
         }} />
 
-        {/* Sound toggle button */}
-        <motion.button
-          onClick={toggleSound}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 1, duration: 0.4, ease: [0.16,1,0.3,1] }}
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.92 }}
-          title={muted ? 'Ton einschalten' : 'Ton ausschalten'}
-          style={{
-            position: 'absolute', bottom: '1.2rem', right: '1.2rem',
-            width: 42, height: 42, borderRadius: '50%',
-            background: 'rgba(255,255,255,0.15)', backdropFilter: 'blur(8px)',
-            border: '1.5px solid rgba(255,255,255,0.3)',
-            color: '#fff', cursor: 'pointer',
-            display: 'flex', alignItems: 'center', justifyContent: 'center',
-            zIndex: 10,
-          }}
-        >
-          {muted ? (
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-              <line x1="23" y1="9" x2="17" y2="15"/>
-              <line x1="17" y1="9" x2="23" y2="15"/>
-            </svg>
-          ) : (
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/>
-              <path d="M19.07 4.93a10 10 0 0 1 0 14.14"/>
-              <path d="M15.54 8.46a5 5 0 0 1 0 7.07"/>
-            </svg>
-          )}
-        </motion.button>
-
-        {/* Text overlay — left aligned like GDK */}
+        {/* Text overlay */}
         <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', padding: '0 6%' }}>
-          <div style={{ maxWidth: 560 }}>
+          <div style={{ maxWidth: 650 }}>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, duration: 0.6, ease: [0.16,1,0.3,1] }}
               className="planetono-kicker"
-              style={{ marginBottom: '0.8rem' }}
+              style={{ marginBottom: '0.8rem', color: 'var(--secondary)' }}
             >
-              Duisburg · Atroper Str. 16
+              Duisburg · Friedrich-Alfred-Straße 94
             </motion.p>
 
             <motion.h1
@@ -91,20 +41,21 @@ export default function Hero() {
               style={{
                 fontSize: 'clamp(3.5rem, 10vw, 7rem)',
                 marginBottom: '1.2rem',
-                textShadow: '3px 3px 0 var(--secondary)'
+                textShadow: '3px 3px 0 var(--secondary)',
+                color: 'var(--white)'
               }}
             >
-              ECHT. FRISCH.<br />
-              <span style={{ color: 'var(--primary)', textShadow: '3px 3px 0 var(--black)' }}>UNVERGESSLICH.</span>
+              PIZZERIA<br />
+              <span style={{ color: 'var(--primary)', textShadow: '3px 3px 0 var(--black)' }}>DA LEONE.</span>
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6, duration: 0.6, ease: [0.16,1,0.3,1] }}
-              style={{ fontSize: '1rem', color: 'rgba(253,250,245,0.75)', marginBottom: '2rem', lineHeight: 1.6 }}
+              style={{ fontSize: '1.2rem', color: 'rgba(255,255,255,0.85)', marginBottom: '2rem', lineHeight: 1.6, fontWeight: 500 }}
             >
-              Döner, Pizza, Pide und mehr – täglich frisch zubereitet.
+              Authentische italienische Pizza & Pasta. <br />Frisch, traditionell und mit Liebe zubereitet.
             </motion.p>
 
             <motion.div
@@ -117,19 +68,18 @@ export default function Hero() {
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.98 }}
                 className="brutal-btn"
-              >Online bestellen</motion.a>
+              >Speisekarte</motion.a>
               <motion.a href="#kontakt"
                 whileHover={{ scale: 1.04 }}
                 whileTap={{ scale: 0.98 }}
                 className="brutal-btn secondary"
-                style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', borderColor: 'rgba(255,255,255,0.4)' }}
+                style={{ background: 'rgba(255,255,255,0.05)', color: '#fff', borderColor: 'rgba(255,255,255,0.4)', backdropFilter: 'blur(10px)' }}
               >Kontakt</motion.a>
             </motion.div>
           </div>
         </div>
       </div>
 
-      {/* Info bar — GDK-style strip below hero */}
       <InfoBar />
     </section>
   );
@@ -137,10 +87,10 @@ export default function Hero() {
 
 function InfoBar() {
   const items = [
-    { label: 'Adresse', value: 'Atroper Str. 16, 47226 Duisburg' },
-    { label: 'Telefon', value: '0163 2364246' },
-    { label: 'Mo – Sa', value: '11:00 – 22:00 Uhr' },
-    { label: 'Sonntag', value: '12:00 – 21:00 Uhr' },
+    { label: 'Adresse', value: 'Fr.-Alfred-Str. 94, 47226 DU' },
+    { label: 'Telefon', value: '02065 7927735' },
+    { label: 'Di – So', value: '12:00 – 22:00 Uhr' },
+    { label: 'Montag', value: 'Geschlossen' },
   ];
   return (
     <motion.div

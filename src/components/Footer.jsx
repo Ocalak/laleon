@@ -12,7 +12,7 @@ export default function Footer() {
         <div style={{ display:'flex', alignItems:'center', gap:'1rem' }}>
           <Logo variant="nav" />
           <div>
-            <div style={{ fontFamily:"var(--head)", fontSize:'1.6rem', fontWeight:700, color:'var(--white)', lineHeight: 0.9 }}>FIRST KEBAP</div>
+            <div style={{ fontFamily:"var(--head)", fontSize:'1.6rem', fontWeight:700, color:'var(--white)', lineHeight: 0.9 }}>PIZZERIA DA LEONE</div>
             <div style={{ fontSize:'0.75rem', color:'var(--primary)', letterSpacing:'0.2em', textTransform:'uppercase', fontWeight:800, marginTop:4 }}>DUISBURG</div>
           </div>
         </div>
@@ -21,21 +21,21 @@ export default function Footer() {
         <div style={{ display:'flex', gap:'4rem', flexWrap:'wrap' }}>
           <div>
             <p style={{ fontFamily: 'var(--head)', fontSize:'0.9rem', fontWeight:700, letterSpacing:'3px', textTransform:'uppercase', color:'rgba(255,255,255,0.4)', marginBottom:'0.6rem' }}>ADRESSE</p>
-            <p style={{ fontSize:'0.95rem', color:'rgba(255,255,255,0.7)', lineHeight:1.6 }}>Atroper Str. 16<br />47226 Duisburg</p>
+            <p style={{ fontSize:'0.95rem', color:'rgba(255,255,255,0.7)', lineHeight:1.6 }}>Friedrich-Alfred-Straße 94<br />47226 Duisburg</p>
           </div>
           <div>
             <p style={{ fontFamily: 'var(--head)', fontSize:'0.9rem', fontWeight:700, letterSpacing:'3px', textTransform:'uppercase', color:'rgba(255,255,255,0.4)', marginBottom:'0.6rem' }}>ÖFFNUNGSZEITEN</p>
-            <p style={{ fontSize:'0.95rem', color:'rgba(255,255,255,0.7)', lineHeight:1.6 }}>Mo – Sa: 11:00 – 22:00<br />So: 12:00 – 21:00</p>
+            <p style={{ fontSize:'0.95rem', color:'rgba(255,255,255,0.7)', lineHeight:1.6 }}>Di – So: 12:00 – 22:00<br />Mo: Geschlossen</p>
           </div>
           <div>
             <p style={{ fontFamily: 'var(--head)', fontSize:'0.9rem', fontWeight:700, letterSpacing:'3px', textTransform:'uppercase', color:'rgba(255,255,255,0.4)', marginBottom:'0.6rem' }}>TELEFON</p>
-            <a href="tel:01632364246" style={{ fontSize:'1.1rem', color:'var(--secondary)', textDecoration:'none', fontWeight:700, fontFamily: 'var(--head)', letterSpacing: '1px' }}>0163 2364246</a>
+            <a href="tel:020657927735" style={{ fontSize:'1.1rem', color:'var(--secondary)', textDecoration:'none', fontWeight:700, fontFamily: 'var(--head)', letterSpacing: '1px' }}>02065 7927735</a>
           </div>
         </div>
       </div>
 
       <p style={{ marginTop:'2rem', textAlign:'center', color:'rgba(255,255,255,0.2)', fontSize:'0.75rem', letterSpacing: '1px', textTransform: 'uppercase' }}>
-        © 2025 First Kebap · Alle Rechte vorbehalten
+        © 2026 Pizzeria Da Leone · Alle Rechte vorbehalten
       </p>
     </motion.footer>
   );

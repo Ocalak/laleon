@@ -3,20 +3,19 @@ import { MapPin, Phone, Clock } from 'lucide-react';
 import { SectionLabel, SectionTitle, Divider } from './Gallery';
 
 const HOURS = [
-  { day:'Montag',     time:'11:00 – 22:00' },
-  { day:'Dienstag',   time:'11:00 – 22:00' },
-  { day:'Mittwoch',   time:'11:00 – 22:00' },
-  { day:'Donnerstag', time:'11:00 – 22:00' },
-  { day:'Freitag',    time:'11:00 – 22:00' },
-  { day:'Samstag',    time:'11:00 – 22:00' },
-  { day:'Sonntag',    time:'12:00 – 21:00' },
+  { day:'Montag',     time:'Geschlossen' },
+  { day:'Dienstag',   time:'12:00 – 22:00' },
+  { day:'Mittwoch',   time:'12:00 – 22:00' },
+  { day:'Donnerstag', time:'12:00 – 22:00' },
+  { day:'Freitag',    time:'12:00 – 22:00' },
+  { day:'Samstag',    time:'12:00 – 22:00' },
+  { day:'Sonntag',    time:'12:00 – 22:00' },
 ];
 
 const jsDay = new Date().getDay();
 const todayIndex = jsDay === 0 ? 6 : jsDay - 1;
 
 const cardV = { hidden:{ opacity:0, y:36 }, show:{ opacity:1, y:0, transition:{ duration:0.6, ease:[0.16,1,0.3,1] } } };
-const card = { background:'#fff', border:'1px solid #E8D9C0', borderRadius:8, padding:'2rem', boxShadow:'0 2px 16px rgba(26,10,6,0.06)' };
 
 export default function Contact() {
   return (
@@ -54,9 +53,9 @@ export default function Contact() {
         {/* Info */}
         <motion.div variants={cardV} className="brutal-card" style={{ padding: '2rem' }}>
           <CardTitle>KONTAKT & ADRESSE</CardTitle>
-          <Row Icon={MapPin} label="Adresse">Atroper Str. 16<br />47226 Duisburg</Row>
+          <Row Icon={MapPin} label="Adresse">Friedrich-Alfred-Straße 94<br />47226 Duisburg</Row>
           <Row Icon={Phone} label="Telefon">
-            <a href="tel:01632364246" style={{ color:'var(--primary)', textDecoration:'none', fontWeight:700, fontFamily: 'var(--head)', fontSize: '1.1rem', letterSpacing: '1px' }}>0163 2364246</a>
+            <a href="tel:020657927735" style={{ color:'var(--primary)', textDecoration:'none', fontWeight:700, fontFamily: 'var(--head)', fontSize: '1.1rem', letterSpacing: '1px' }}>02065 7927735</a>
           </Row>
           <Row Icon={Clock} label="Heute geöffnet">{HOURS[todayIndex].time}</Row>
         </motion.div>
@@ -67,9 +66,9 @@ export default function Contact() {
             <CardTitle>STANDORT</CardTitle>
           </div>
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2487!2d6.7317!3d51.4108!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8c3a1234!2sAtroper+Str.+16%2C+47226+Duisburg!5e0!3m2!1sde!2sde!4v1"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2487.654!2d6.717267!3d51.409056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b8bf1c2c4c7105%3A0x57033f1ebe71b463!2sPizzeria%20Da%20Leone!5e0!3m2!1sde!2sde!4v1713123456789"
             width="100%" height="320" style={{ display:'block', border:0 }}
-            allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="First Kebap Standort"
+            allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" title="Pizzeria Da Leone Standort"
           />
         </motion.div>
       </motion.div>
