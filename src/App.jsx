@@ -1,4 +1,5 @@
 import { SpeedInsights } from '@vercel/speed-insights/react';
+import { Analytics } from '@vercel/analytics/react';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
 import InfoStrip from './components/InfoStrip';
@@ -23,6 +24,7 @@ export default function App() {
       <Footer />
       <Cart />
       <SpeedInsights />
+      <Analytics />
     </CartProvider>
   );
 }
